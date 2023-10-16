@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,21 +26,20 @@
   <div class="container">
     <table class="table table-bordered">
       <tbody>
-        <?php
-          $cellCounter = 1;
-          $totalCells = 100;
-          for ($i = 1; $i <= 20; $i++) {
-            echo '<tr>';
-            for ($j = 1; $j <= 5; $j++) {
-              echo '<td>';
-              echo ' <span id="' . "number-$i-$j" . '" class="number">0</span> ';
-              echo ' <span id="' . "cell-$i-$j" . '" class="blink">Allah</span> ';
-              echo '</td>';
-              $cellCounter++;
+        <!-- Membuat 20 baris -->
+        <script>
+          for (let i = 1; i <= 20; i++) {
+            document.write('<tr>');
+            // Membuat 5 kolom
+            for (let j = 1; j <= 5; j++) {
+              document.write('<td>');
+              document.write('<span class="number">' + ((i - 1) * 5 + j) + '</span>.');
+              document.write(' <span class="blink">Allah</span>');
+              document.write('</td>');
             }
-            echo '</tr>';
+            document.write('</tr>');
           }
-        ?>
+        </script>
       </tbody>
     </table>
   </div>
@@ -50,30 +48,22 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
   <script>
-    // JavaScript untuk mengatur animasi kedipan dan nomor
-    $(document).ready(function () {
-      let cellCounter = 1;
-      let totalCells = 100;
-      
+    // JavaScript untuk mengatur animasi kedipan
+    document.addEventListener("DOMContentLoaded", function () {
+      const cells = document.querySelectorAll(".blink");
+      let cellCounter = 0;
+      const totalCells = cells.length;
+
       function blinkCell() {
-        const cellId = `cell-${Math.ceil(cellCounter / 5)}-${cellCounter % 5 === 0 ? 5 : cellCounter % 5}`;
-        const cell = document.getElementById(cellId);
-        const numberId = `number-${Math.ceil(cellCounter / 5)}-${cellCounter % 5 === 0 ? 5 : cellCounter % 5}`;
-        const number = document.getElementById(numberId);
-        cell.style.display = "inline";
-        number.innerText = cellCounter;
-        cellCounter++;
-        
-        if (cellCounter <= totalCells) {
-          setTimeout(blinkCell, 800);
+        if (cellCounter < totalCells) {
+          cells[cellCounter].style.display = "inline";
+          cellCounter++;
+          setTimeout(blinkCell, 500);
         }
       }
-      
+
       blinkCell();
     });
   </script>
 </body>
 </html>
-```
-
-Dalam kode di atas, nomor 1 hingga 100 akan ditampilkan di sebelah masing-masing teks "Allah". Semoga ini memenuhi kebutuhan Anda.
