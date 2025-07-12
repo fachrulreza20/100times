@@ -12,6 +12,7 @@
       padding: 0;
       color: #000;
     }
+
     .header {
       padding: 10px 16px;
       font-size: 14px;
@@ -20,41 +21,49 @@
       justify-content: space-between;
       border-bottom: 1px solid #eee;
     }
+
     .header span {
       font-weight: 500;
     }
+
     .store {
       padding: 16px;
       font-size: 20px;
       font-weight: 600;
       border-bottom: 8px solid #f2f2f2;
     }
+
     .note {
       padding: 0 16px;
       font-size: 14px;
       color: #555;
       margin-bottom: 16px;
     }
+
     .section {
       padding: 16px;
       border-bottom: 8px solid #f2f2f2;
     }
+
     .order-card {
       background-color: #f8f8f8;
       padding: 16px;
       border-radius: 10px;
       margin-bottom: 16px;
     }
+
     .order-card h3 {
       margin: 0 0 8px;
       font-size: 16px;
       font-weight: 600;
     }
+
     .order-card p {
       margin: 0;
       font-size: 14px;
       color: #444;
     }
+
     .confirm-btn {
       background-color: #000;
       color: #fff;
@@ -67,12 +76,14 @@
       margin-top: 16px;
       cursor: pointer;
     }
+
     .support {
       padding: 16px;
     }
-    .disabled-btn {
-      background-color: #ddd;
-      color: #aaa;
+
+    .complete-btn {
+      background-color: #000;
+      color: #fff;
       font-size: 16px;
       font-weight: 600;
       width: 100%;
@@ -80,7 +91,46 @@
       border: none;
       border-radius: 8px;
       margin-top: 16px;
-      cursor: not-allowed;
+      cursor: pointer;
+    }
+
+    /* Popup style */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-content {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    .popup-content .checkmark {
+      font-size: 48px;
+      color: #28a745;
+      margin-bottom: 10px;
+    }
+
+    .popup-content h2 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
@@ -92,7 +142,7 @@
   </div>
 
   <div class="store">
-    Chicken Salad Chick
+    Complete Pickup This Restaurant
   </div>
 
   <div class="note">
@@ -112,8 +162,26 @@
 
   <div class="support">
     <h2>Help and support</h2>
-    <button class="disabled-btn" disabled>Complete pickup</button>
+    <button class="complete-btn" onclick="showPopup()">Complete pickup</button>
   </div>
+
+  <!-- Popup -->
+  <div class="popup" id="pickupPopup">
+    <div class="popup-content">
+      <div class="checkmark">✔️</div>
+      <h2>Pickup Completed</h2>
+    </div>
+  </div>
+
+  <script>
+    function showPopup() {
+      const popup = document.getElementById("pickupPopup");
+      popup.style.display = "flex";
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 2000); // Hide after 2 seconds
+    }
+  </script>
 
 </body>
 </html>
