@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Uber Eats Pickup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #fff;
+      margin: 0;
+      padding: 0;
+      color: #000;
+    }
+    .header {
+      padding: 10px 16px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #eee;
+    }
+    .header span {
+      font-weight: 500;
+    }
+    .store {
+      padding: 16px;
+      font-size: 20px;
+      font-weight: 600;
+      border-bottom: 8px solid #f2f2f2;
+    }
+    .note {
+      padding: 0 16px;
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 16px;
+    }
+    .section {
+      padding: 16px;
+      border-bottom: 8px solid #f2f2f2;
+    }
+    .order-card {
+      background-color: #f8f8f8;
+      padding: 16px;
+      border-radius: 10px;
+      margin-bottom: 16px;
+    }
+    .order-card h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .order-card p {
+      margin: 0;
+      font-size: 14px;
+      color: #444;
+    }
+    .confirm-btn {
+      background-color: #000;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 16px;
+      cursor: pointer;
+    }
+    .support {
+      padding: 16px;
+    }
+    .disabled-btn {
+      background-color: #ddd;
+      color: #aaa;
+      font-size: 16px;
+      font-weight: 600;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 16px;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <span>5 min</span>
+    <span>1.7 mi</span>
+  </div>
+
+  <div class="store">
+    Chicken Salad Chick
+  </div>
+
+  <div class="note">
+    Note from business<br>
+    <strong>Standard</strong>
+  </div>
+
+  <div class="section">
+    <h2>Pick up 1 order</h2>
+    <div class="order-card">
+      <h3>Tracy M.</h3>
+      <p>2418B · 2 items</p>
+      <p>Expected by 12:14 PM</p>
+      <button class="confirm-btn">Confirm pickup</button>
+    </div>
+  </div>
+
+  <div class="support">
+    <h2>Help and support</h2>
+    <button class="disabled-btn" disabled>Complete pickup</button>
+  </div>
+
+</body>
+</html>
