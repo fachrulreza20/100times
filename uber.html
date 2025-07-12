@@ -118,7 +118,7 @@
 
     .popup-content .checkmark {
       font-size: 48px;
-      color: Green;
+      color: #28a745;
       margin-bottom: 10px;
     }
 
@@ -154,17 +154,22 @@
     <h2>Pick up 1 order</h2>
     <div class="order-card">
       <h3>Tracy M.</h3>
-      <p>XXXX2B4items</p>
-      <p>PM</p>
-       
+      <p>2418B · 2 items</p>
+      <p>Expected by 12:14 PM</p>
+      <button class="confirm-btn">Confirm pickup</button>
     </div>
+  </div>
+
+  <div class="support">
+    <h2>Help and support</h2>
+    <button class="complete-btn" onclick="showPopup()">Complete pickup</button>
   </div>
 
   <!-- Popup -->
   <div class="popup" id="pickupPopup">
     <div class="popup-content">
       <div class="checkmark">✔️</div>
-      <h2>Pickup Completed</h2>
+      <h2 style="background-color:Green">Pickup Completed</h2>
     </div>
   </div>
 
